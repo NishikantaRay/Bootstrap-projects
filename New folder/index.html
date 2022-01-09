@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans";
+        }
+
+        body {
+            background-color: #555;
+        }
+
+        .content-wrapper {
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        .news-card {
+            border: 0px solid aqua;
+            margin: 0.5rem;
+            position: relative;
+            height: 12rem;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            flex: 1;
+            min-width: 290px;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+        }
+
+        @media (min-width: 900px) {
+
+            .news-card {
+                height: 20rem
+            }
+        }
+
+        .news-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);
+            ;
+            z-index: 0;
+        }
+
+        .news-card__card-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+
+        }
+
+        .news-card__image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 3s ease;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            position: relative;
+            z-index: -1;
+        }
+
+        .news-card__text-wrapper {
+            position: absolute;
+            bottom: 0rem;
+            padding: 1rem;
+            color: white;
+
+            transition: background-color 1.5s ease;
+        }
+
+        .news-card__title {
+            transition: color 1s ease;
+            margin-bottom: .5rem;
+        }
+
+        .news-card__post-date {
+            font-size: .7rem;
+            margin-bottom: .5rem;
+            color: #CCC;
+        }
+
+        .news-card__details-wrapper {
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 1.5s ease, opacity 1s ease;
+        }
+
+        @media (min-width: 900px) {
+            .news-card:hover .news-card__details-wrapper {
+                max-height: 20rem;
+                opacity: 1;
+            }
+
+            .news-card:hover .news-card__text-wrapper {
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+
+            .news-card:hover .news-card__title {
+                color: yellow;
+            }
+
+            .news-card:hover .news-card__image {
+                transform: scale(1.2);
+                z-index: -1;
+            }
+        }
+
+        .news-card__excerpt {
+            font-weight: 300;
+        }
+
+        .news-card__read-more {
+            background: black;
+            color: #bbb;
+            display: block;
+            padding: 0.4rem 0.6rem;
+            border-radius: 0.3rem;
+            margin-top: 1rem;
+            border: 1px solid #444;
+            font-size: 0.8rem;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            text-decoration: none;
+            width: 7rem;
+            margin-left: auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .news-card__read-more i {
+            position: relative;
+            left: 0.2rem;
+            color: #888;
+            transition: left 0.5s ease, color 0.6s ease;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .news-card__read-more:hover i {
+            left: 0.5rem;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="news-card__title">10 Most Haunted Places in India</h2>
+    
+    <div class="content-wrapper">
+       
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://blog.thomascook.in/wp-content/uploads/2018/05/img-1-4-e1527133000803.jpg" alt=""
+                class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">BHANGARH FORT</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">BHANGARH FORT is located in Alwar district of the royal state of
+                        India. Situated at the borders of the famous Sariska Tiger Reserve in the area, surely the name
+                        of Bhangarh Fort is not for those with faint hearts. Listed as one of the Most Haunted Place in
+                        India, and the world, it can give you goose bumps just by its mere tale, forget a glimpse. The
+                        Bhangarh Fort’s history dates back to centuries being built in the 17th century in Rajasthan.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/01/Lambi-Dehra-Mines.jpg" alt=""
+            class="news-card__image">
+                
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">THE LAMBI DEHAR MINES</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">LAMBI DEHAR MINES is located at the outskirts of Mussoorie,
+                        Uttarakhand, some 10 km from Library Chowk, Mall Road
+                        .Back in the 90's, some 50,000 mine workers died an agonizing death at the Dehar Mines due to
+                        faulty mining practices. The mines were subsequently shut down and abandoned. Since then the
+                        mines have earned the dubious distinction of being amongst the Top 10 haunted places in India.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://i0.wp.com/travelshoebum.com/wp-content/uploads/2020/04/IMG_0876.jpg?fit=2016%2C1512&ssl=1"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">DOW HILL KURSEONG</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">About 30 kilometers from Darjeeling is located the most haunted hill
+                        station in India, Dow Hill of Kurseong, where there is no dearth of paranormal happenings and
+                        stories. A small hill station known for its beautiful vistas, orchid gardens, forested hills,
+                        and tea plantations, Kurseong is also home to a death road, headless ghost, haunted school, and
+                        countless real ghost stories. Here we tell you a bit about a place where creepy creatures are
+                        more concentrated than in other parts of India.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Agrasen_ki_Baoli%2C_New_Delhi%2C_India_-_20070127.jpg"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">AGRASEN KI BAOLI</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">Agrasen ki Baoli is as presumably built during 14th century by King Agrasen. This less seen and heard structure is nestled between the multistories of Connaught Place. This monument has a great historical relevance all wrapped in amazement and mystery is also known to be a haunted place. At times visitors have felt something strange about the place. Some people even affirm that the Baoli is a domicile of devils. The Baoli has turned into the home for thousands of bats and pigeons over these centuries. This might be the dialect behind the eeriness felt inside the vicinity of this Baoli.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/11/28/Pictures/malcha-mahal-ruins_c8f1aae0-1144-11ea-a64f-e20fcd3bbcc8.jpg"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">Malcha Mahal, Delhi</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">Malcha Mahal, also known as Wilayat Mahal, is a Tughlak era hunting lodge in the Chanakyapuri area of New Delhi.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2015/09/brij-raj-bhavan.jpg"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">Brij Raj Bhavan In Kota</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">Brij Raj Bhavan Palace, an old palace built in the early 19th century and converted into a heritage hotel in 1980, is one of the haunted places to visit in India. It is claimed to be home to the harmless ghost of Major Burton who was killed by the Indian sepoys during the Mutiny of 1857. This ghost in India is rumoured to walk the corridors of the palace and occasionally slap the guards who sleep on their duties.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2015/09/Kuldhara-Lone-haunted-temple-in-the-haunted-Kuldhara-village.jpg"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title"> Kuldhara In Rajasthan</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">Kuldhara is located near Jaisalmer and has been abandoned since the 19th century. It was established in 1291 by Paliwal Brahmins, known for their business acumen and agricultural knowledge. One night in 1825, all the people of Kuldhara and 83 nearby villages vanished all of a sudden. The mystery of the vanishing villagers is quite intriguing. Though a story talks of Salim Singh, then minister of state, who fell in love with the beautiful daughter of the village chieftain. He threatened the villagers of huge taxes, should they fail to get him married to her. The chief of the village, along with those of the nearby 83 villages, decided to abandon their villages. It is also said that the villagers, before leaving, cursed the village that no one could ever inhabit the land.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2015/09/staircase-gp-block-meerut.jpg"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">GP Block In Meerut</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">Ranked among North India’s most haunted places, GP Block in Meerut is known for its numerous ghosts. Several locals have spotted ghosts of girls in red dresses and ghosts of men drinking right outside the building though none of the witnesses could figure out who these people really were. The ghosts disappeared whenever any brave heart dared to go close to them.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/01/mill-e1553071266864.jpg"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">Mukesh Mills In Mumbai</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">This mill is one of the most famous haunted places in india. Years ago, the mill had caught fire and was shut down as a result. After that it became the spot for the film industry to shoot horror movies! But, to their misfortune, some paranormal activities started happening there. The crew members reported some abnormal activities at the mill. And so, on today’s date many actors deny to do the shooting at this mill.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="news-card">
+            <a href="" class="news-card__card-link"></a>
+            <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/01/Golconda-Fort.jpg"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">Golconda Fort: The History Lies</h2>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">The Golkonda fort is situated at the outskirts of the Hyderabad city and considered to be one of the haunted places in Hyderabad. Amidst the ruins, it is said that some shadows are seen after the dark and also some strange sounds are heard by people who stay back after 6 pm. Alongside that, there are rumours to be heard of Taramati dancing in the court where she used to dance in front of the Sultan. Though there is no evidence yet, every ruin has a story behind it.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
